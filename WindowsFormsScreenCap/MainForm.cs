@@ -353,7 +353,7 @@ namespace WindowsFormsScreenCap
         private void checkBox3_CheckedChanged(object sender, EventArgs e) => pictureBox11.Visible = !checkBox3.Checked;
         private void checkBox4_CheckedChanged(object sender, EventArgs e) => pictureBox12.Visible = !checkBox4.Checked;
         private void checkBox5_CheckedChanged(object sender, EventArgs e) => pictureBox13.Visible = !checkBox5.Checked;
-        private void checkBox6_CheckedChanged(object sender, EventArgs e) => pictureBox13.Visible = !checkBox6.Checked;
+        private void checkBox6_CheckedChanged(object sender, EventArgs e) => pictureBox14.Visible = !checkBox6.Checked;
         #endregion checkBox
     }
 }
