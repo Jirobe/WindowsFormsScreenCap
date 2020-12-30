@@ -38,11 +38,16 @@ namespace WindowsFormsScreenCap
             //タイトルバー
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
-            //sqlite 初期処理
-            _ = SqliteService.Current;
-
             //初期化
             Clear();
+
+            if (Directory.Exists(dataPath) == false)
+            {
+                //ディレクトリがなければ作
+                Directory.CreateDirectory(dataPath);
+            }
+
+            _ = SqliteService.Current;
 
             //画像保存してから終わる
             FormClosing += (object sender, FormClosingEventArgs e) => SaveImage();
@@ -332,6 +337,11 @@ namespace WindowsFormsScreenCap
                     graphics.DrawImage(stamp, mouseEvent.X - offset.x, mouseEvent.Y - offset.y, stamp.Width, stamp.Height);
 
                 picture.Image = bmp;
+
+                //カーソルを元に戻す
+                Cursor = Cursors.Arrow;
+                stamp = null;
+
             }
         }
 

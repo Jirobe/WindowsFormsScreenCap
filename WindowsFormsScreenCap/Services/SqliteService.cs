@@ -87,7 +87,7 @@ namespace WindowsFormsScreenCap.Services
                 {
                     if (reader.Read())
                     {
-                        count = int.Parse(reader["CNT"].ToString());
+                        int.TryParse(reader["CNT"].ToString(), out count);
                     }
                 }
             }
